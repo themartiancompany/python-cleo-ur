@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: AGPL-3.0
+#
+# Maintainer: Truocolo <truocolo@aol.com>
+# Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
@@ -9,9 +13,11 @@ pkgdesc="create beautiful and testable command-line interfaces"
 arch=(any)
 url="https://github.com/python-poetry/$_pkgname"
 license=(MIT)
-depends=(python-crashtest
-         python-rapidfuzz
-         python-typing_extensions)
+depends=(
+  python-crashtest
+  python-rapidfuzz
+  python-typing_extensions
+)
 makedepends=(python-{build,installer,wheel}
              python-poetry-core)
 checkdepends=(python-pytest
@@ -45,3 +51,4 @@ package() {
     python -m installer -d "$pkgdir" dist/*.whl
     install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
 }
+
